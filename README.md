@@ -1,72 +1,79 @@
+
 # Network Traffic Analyzer
 
-Description
+This Python application offers a comprehensive, user-friendly interface for capturing and analyzing network packets in real time. The application displays captured packets with color-coded protocol details, generates real-time visualizations of packet counts, and sends email alerts when network traffic exceeds a predefined threshold.
 
-This Python application provides a user-friendly interface for capturing network packets, displaying them in a text widget with color-coded protocols, and generating real-time packet count visualizations. Additionally, it features email alerts when network traffic exceeds a predefined threshold.
+## Features
 
-Features
+- **Packet Capture**: Capture packets from a specified network interface and save them to a PCAP file.
+- **Detailed Packet Display**: Display captured packet information in a text widget, including protocol, source IP, and destination IP, with color-coding for easy identification (TCP in blue, UDP in green, etc.).
+- **Real-Time Visualization**: Generate and display real-time visualizations of packet counts over time using Matplotlib.
+- **Email Alerts**: Automatically send email alerts when network traffic exceeds a user-defined threshold, ensuring immediate notification of potential issues.
+- **Flexible Capture Management**: Start and stop packet capture on demand, with an option to stop the capture before the specified duration.
 
-Capture packets from the specified network interface.
-Save captured packets to a PCAP file.
-Display captured packet information in a text widget, including protocol, source IP, and destination IP.
-Color-code captured packets based on protocol (TCP and UDP).
-Generate real-time visualizations of packet count over time using Matplotlib.
-Send email alerts when network traffic exceeds a user-defined threshold.
-Optionally stop capture before the specified duration using a dedicated button.
+## Requirements
 
-Requirements
+- **Python 3.x**
+- **tkinter**: GUI library (included in standard Python installation)
+- **pyshark**: For packet capturing (`pip install pyshark`)
+- **threading**: For managing capture processes (included in standard Python installation)
+- **time**: For managing timing and delays (included in standard Python installation)
+- **smtplib**: For sending emails (included in standard Python installation)
+- **email**: For email content handling (included in standard Python installation)
+- **matplotlib**: For generating visualizations (`pip install matplotlib`)
 
-Python 3.x
-tkinter library (included in standard Python installation)
-pyshark library (pip install pyshark)
-threading library (included in standard Python installation)
-time library (included in standard Python installation)
-smtplib library (included in standard Python installation)
-email library (included in standard Python installation)
-matplotlib library (pip install matplotlib)
-Installation
+## Installation
 
 Install the required libraries using pip:
 
-Bash
+```bash
 pip install pyshark matplotlib
-Use code with caution.
+```
 
-Clone or download the repository containing the Python script (packet_capture_display.py).
+Clone or download the repository containing the Python script (`packet_capture_display.py`).
 
-Usage
+## Usage
 
-Open a terminal or command prompt and navigate to the directory containing the script.
+1. Open a terminal or command prompt and navigate to the directory containing the script.
+2. Run the script using:
 
-Run the script using:
+   ```bash
+   python packet_capture_display.py
+   ```
 
-Bash
-python packet_capture_display.py
-Use code with caution.
+3. Follow the on-screen instructions to begin capturing packets and analyzing network traffic.
 
-Configuration
+## Configuration
 
-Update the following values in the script to customize your application:
-EMAIL_ADDRESS: Your email address (for sending alerts).
-EMAIL_PASSWORD: Your email password (for sending alerts).
-RECIPIENT_ADDRESS: Email address to receive alerts.
-ALERT_THRESHOLD: Packet count threshold for triggering email alerts.
-GUI Elements
+Customize the following values in the script to suit your needs:
 
-**Network Interface**: Currently displays "Wi-Fi." You can modify the script to allow selection from available interfaces.
-**PCAP File Path**: Enter the desired path to save captured packets. A browse button is provided for convenience.
-**Capture Duration**: Specify the duration (in seconds) for the capture.
-**Start Capture Button**: Initiates the capture process.
-**Stop Capture Button**: Stops the capture before the specified duration. (Optional)
-**Text Widget**: Displays captured packet information and is color-coded based on protocol.
-**Visualization**: A plot showing packet count over time.
+- `EMAIL_ADDRESS`: Your email address for sending alerts.
+- `EMAIL_PASSWORD`: Your email password for sending alerts.
+- `RECIPIENT_ADDRESS`: The email address where alerts should be sent.
+- `ALERT_THRESHOLD`: Packet count threshold that triggers email alerts.
 
-Example Output
+## GUI Elements
 
-The text widget will display captured packet details, and the plot will visually represent the packet count over time. When the threshold is crossed, an email alert will be sent.
+- **Network Interface**: Displays "Wi-Fi" by default; modify the script to select from available interfaces.
+- **PCAP File Path**: Enter the desired path to save captured packets. A browse button is provided for easy selection.
+- **Capture Duration**: Specify the capture duration in seconds.
+- **Start Capture Button**: Click to start capturing packets.
+- **Stop Capture Button**: Click to stop the capture before the specified duration (optional).
+- **Text Widget**: Displays captured packet details, color-coded by protocol.
+- **Visualization**: A real-time plot showing packet count over time.
 
-Disclaimer
+## Example Output
 
-Please note that sending emails from Python scripts might require additional configuration depending on your email service provider. Make sure to enable "Less secure app access" in your Gmail settings or consult your email provider's documentation for similar settings if applicable.
+- **Packet Details**: The text widget will display captured packet details (protocol, source IP, destination IP) with color-coding for easy analysis.
+- **Real-Time Visualization**: A Matplotlib plot will visually represent packet counts over time.
+- **Email Alerts**: When the packet count exceeds the predefined threshold, an email alert will be sent to the specified recipient.
+
+## Disclaimer
+
+Please note that sending emails from Python scripts may require additional configuration depending on your email service provider. For Gmail users, enabling "Less secure app access" might be necessary. Consult your email provider's documentation for similar settings if applicable.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 
