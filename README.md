@@ -68,12 +68,5 @@ Customize the following values in the script to suit your needs:
 - **Real-Time Visualization**: A Matplotlib plot will visually represent packet counts over time.
 - **Email Alerts**: When the packet count exceeds the predefined threshold, an email alert will be sent to the specified recipient.
 
-## Disclaimer
-
-Please note that sending emails from Python scripts may require additional configuration depending on your email service provider. For Gmail users, enabling "Less secure app access" might be necessary. Consult your email provider's documentation for similar settings if applicable.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 
